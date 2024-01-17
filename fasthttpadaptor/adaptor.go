@@ -32,7 +32,7 @@ import (
 // where there is no access to change the server KeepHijackedConns field (which is default as false)
 // it also can be used for additional custom hijacking logic
 func NewFastHTTPHandlerFunc(h http.HandlerFunc, hijackHandler ...func(net.Conn)) fasthttp.RequestHandler {
-	return NewFastHTTPHandler(h, hijackConnHandler)
+	return NewFastHTTPHandler(h, hijackHandler)
 }
 
 // NewFastHTTPHandler wraps net/http handler to fasthttp request handler,
